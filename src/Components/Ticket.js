@@ -1,0 +1,29 @@
+import React, { useState } from "react";
+
+export function Ticket({ ticketsArr, total }) {
+  return (
+    <div className="ticket-zone">
+      <h2>Ticket</h2>
+      <div className="ticket">
+        <p>Products</p>
+        <p>-----------------------</p>
+        {ticketsArr.map((ticket, i) => {
+          return (
+            <p key={i}>
+              {ticket[1] ? `X${ticket[1]} ` : ""}
+              {ticket[0]}
+            </p>
+          );
+        })}
+        {ticketsArr.length ? <p>-----------------------</p> : ""}
+
+        <p>Total--------------${total}</p>
+      </div>
+      {ticketsArr.length ? (
+        <botton className="send-ticket">send ticket</botton>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+}

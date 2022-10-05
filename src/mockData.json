@@ -1,0 +1,54 @@
+{
+  "Products": {
+    "metals": [
+      {
+        "name": "Copper",
+        "imageURL": "https://images.unsplash.com/photo-1628694647734-bf4aedeede1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "price": 78.4,
+        "key": "qwiuhduh87dy98o2eo2wiu"
+      },
+      {
+        "name": "Aluminium",
+        "imageURL": "https://images.unsplash.com/photo-1611110321197-3b43447c00e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "price": 56.5,
+        "key": "qwiuhdSGdSvrzb2eo2wiu"
+      },
+      {
+        "name": "Cans",
+        "imageURL": "https://images.unsplash.com/photo-1561503412-852800622772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80",
+        "price": 17.3,
+        "key": "qwiuhGgrdgrgo2wiu"
+      },
+      {
+        "name": "Steel",
+        "imageURL": "https://images.unsplash.com/photo-1615512050724-57a80ade17ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "price": 20.7,
+        "key": "qwiuhduHSDgdgtdeo2wiu"
+      },
+      {
+        "name": "Beams",
+        "imageURL": "https://images.unsplash.com/photo-1508337323540-f5d861907573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "price": 300,
+        "key": "qwzFSDdtrhgzdrg2eo2wiu"
+      },
+      {
+        "name": "Barrels",
+        "imageURL": "https://images.unsplash.com/photo-1534072700421-3100bd80c44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "price": 250,
+        "key": "qwiudFfxjcugdzg2wiu"
+      },
+      {
+        "name": "Scrap",
+        "imageURL": "https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80",
+        "price": 2,
+        "key": "qwiuzdthfbzdeo2wiu"
+      },
+      {
+        "name": "Bronze",
+        "imageURL": "https://images.unsplash.com/photo-1596394723269-b2cbca4e6313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
+        "price": 38,
+        "key": "qwidzzdfbzbdz"
+      }
+    ]
+  }
+}

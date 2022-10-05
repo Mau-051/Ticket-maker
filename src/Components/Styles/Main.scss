@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+@import "../Styles/Variables/variables.scss";
+@import "../Styles/Mixins/mixins.scss";
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ticket-zone {
+  width: calc(100vw - (4 * $grid-size + 3 * $grid-gap));
+  background-color: $thirdary-color;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ticket {
+    background-color: rgb(201, 201, 201);
+    border-radius: 2vw;
+    width: 17vw;
+    padding: 1vw 0;
+    p {
+      font-size: 1.1vw;
+    }
+  }
+  .send-ticket {
+    background-color: $primary-color;
+    color: $thirdary-color;
+    border-radius: 1.5vw;
+    cursor: pointer;
+    padding: 2vw 0;
+    font-size: 1.8vw;
+    margin: 2vw;
+    width: 12vw;
+  }
+  h2 {
+    margin-bottom: 4vh;
+    font-size: 2vw;
+  }
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  .product-zone {
+    min-width: calc(4 * $grid-size + 3 * $grid-gap);
+    background-color: $primary-color;
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $grid-gap;
+  }
+}
+
+.product-card {
+  font-family: "Rubik", sans-serif;
+  background-color: $secondary-color;
+  @include border-radius;
+  width: $grid-size;
+  height: 17.5vw;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: column;
+  transition: transform 0.5s;
+  &:hover {
+    background-color: $thirdary-color;
+    transform: scale(1.13);
+    img {
+      filter: grayscale(0%);
+    }
+  }
+
+  .product-info {
+    width: calc($grid-size - 20%);
+    padding-top: 0.5vw;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .name {
+      margin: 0;
+      font-size: 1.6vw;
+    }
+    .price-container {
+      margin: 0.2vw 0;
+      background-color: $thirdary-color;
+      border-radius: 2vw;
+      padding: 0.2vw;
+      min-width: 6vw;
+      .price {
+        margin: 0;
+        color: rgb(53, 53, 53);
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+.product-img {
+  @include border-radius;
+  margin-top: 10%;
+  height: calc($grid-size - 20%);
+  width: calc($grid-size - 20%);
+  filter: grayscale(100%);
+}
+
+@media screen {
+}

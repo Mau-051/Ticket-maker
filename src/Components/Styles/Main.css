@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ticket-zone {
+  width: 30.5vw;
+  background-color: rgb(226, 226, 226);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ticket-zone .ticket {
+  background-color: rgb(201, 201, 201);
+  border-radius: 2vw;
+  width: 17vw;
+  padding: 1vw 0;
+}
+.ticket-zone .ticket p {
+  font-size: 1.1vw;
+}
+.ticket-zone .send-ticket {
+  background-color: hsl(216.34deg, 70.58%, 36.67%);
+  color: rgb(226, 226, 226);
+  border-radius: 1.5vw;
+  cursor: pointer;
+  padding: 2vw 0;
+  font-size: 1.8vw;
+  margin: 2vw;
+  width: 12vw;
+}
+.ticket-zone h2 {
+  margin-bottom: 4vh;
+  font-size: 2vw;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+.main .product-zone {
+  min-width: 69.5vw;
+  background-color: hsl(216.34deg, 70.58%, 36.67%);
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4.5vw;
+}
+
+.product-card {
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(50deg, 100%, 59%);
+  border-radius: 20%;
+  width: 14vw;
+  height: 17.5vw;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: column;
+  transition: transform 0.5s;
+}
+.product-card:hover {
+  background-color: rgb(226, 226, 226);
+  transform: scale(1.13);
+}
+.product-card:hover img {
+  filter: grayscale(0%);
+}
+.product-card .product-info {
+  width: calc(14vw - 20%);
+  padding-top: 0.5vw;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-card .product-info .name {
+  margin: 0;
+  font-size: 1.6vw;
+}
+.product-card .product-info .price-container {
+  margin: 0.2vw 0;
+  background-color: rgb(226, 226, 226);
+  border-radius: 2vw;
+  padding: 0.2vw;
+  min-width: 6vw;
+}
+.product-card .product-info .price-container .price {
+  margin: 0;
+  color: rgb(53, 53, 53);
+  font-size: 1.5vw;
+}
+
+.product-img {
+  border-radius: 20%;
+  margin-top: 10%;
+  height: calc(14vw - 20%);
+  width: calc(14vw - 20%);
+  filter: grayscale(100%);
+}/*# sourceMappingURL=Main.css.map */

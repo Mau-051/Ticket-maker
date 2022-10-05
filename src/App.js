@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { Main } from "./Components/Main";
+import { getProducts } from "./Service-code/productData";
 
-function App() {
+export function App() {
+  const [status, setStatus] = useState("loading");
+  const [products, setProducts] = useState();
+
+  useEffect(() => {
+    getProducts().then((response) => {
+      setStatus("ok");
+      setProducts(response);
+    });
+  }, []);
+
+  if (status === "loading") {
+    return <p>loading</p>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Main productsArr={products.metals} />
+    </>
   );
 }
-
-export default App;
