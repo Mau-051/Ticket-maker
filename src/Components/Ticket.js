@@ -10,7 +10,7 @@ export function Ticket({ ticketsArr, total }) {
         {ticketsArr.map((ticket, i) => {
           return (
             <p key={i}>
-              {ticket[1] ? `X${ticket[1]} ` : ""}
+              {ticket[1].productNum ? `X${ticket[1].productNum} ` : ""}
               {ticket[0]}
             </p>
           );

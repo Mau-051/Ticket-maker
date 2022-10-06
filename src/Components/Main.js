@@ -3,14 +3,26 @@ import { ProductCard } from "./ProductCard";
 import "./Styles/Main.css";
 import { Ticket } from "./Ticket";
 
+function calculateTotal(productArr) {
+  return productArr.reduce((sum, current) => {
+    return sum + current[1].productTotal;
+  }, 0);
+}
+
 export function Main({ productsArr }) {
   const [tickets, setTickets] = useState([]);
-  const [total, setTotal] = useState(0);
 
   function passProduct(productName, productPrice) {
-    setTotal((prevTotal) => prevTotal + productPrice);
-
     let productNum = 1;
+
+    tickets.forEach((ticket, ind) => {
+      if (
+        ticket[0].split("").slice(0, productName.length).join("") == productName
+      ) {
+        productNum = ticket[1].productNum + 1;
+        tickets.splice(ind, 1);
+      }
+    });
 
     let numOfSpace = 18 - productName.length - `${productPrice}`.length;
     let spaceStr = "";
@@ -21,18 +33,14 @@ export function Main({ productsArr }) {
 
     setTickets((prevTickets) => [
       ...prevTickets,
-      [`${productName}${spaceStr}${productPrice}`, productNum],
+      [
+        `${productName}${spaceStr}${productPrice}`,
+        { productNum, productTotal: productNum * productPrice, productPrice },
+      ],
     ]);
-
-    tickets.forEach((ticket, ind) => {
-      if (
-        ticket[0].split("").slice(0, productName.length).join("") == productName
-      ) {
-        productNum = ticket[1] + 1;
-        tickets.splice(ind, 1);
-      }
-    });
   }
+
+  let total = calculateTotal(tickets);
 
   return (
     <main className="main">
