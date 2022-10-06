@@ -20,7 +20,9 @@ export function Ticket({ ticketsArr, total }) {
         <p>Total--------------${total}</p>
       </div>
       {ticketsArr.length ? (
-        <botton className="send-ticket">send ticket</botton>
+        <a href="/ticket" className="send-ticket">
+          send ticket
+        </a>
       ) : (
         ""
       )}

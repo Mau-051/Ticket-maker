@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Main } from "./Components/Main";
 import { getProducts } from "./Service-code/productData";
+import { Routes, Route } from "react-router-dom";
+import ShowTicket from "./Components/ShowTicket";
 
 export function App() {
   const [status, setStatus] = useState("loading");
@@ -18,8 +20,9 @@ export function App() {
   }
 
   return (
-    <>
-      <Main productsArr={products.metals} />
-    </>
+    <Routes>
+      <Route path="/" element={<Main productsArr={products.metals} />} />
+      <Route path="/ticket" element={<ShowTicket />} />
+    </Routes>
   );
 }
