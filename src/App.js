@@ -1,6 +1,6 @@
-import { Main } from "./Components/Main";
 import { Routes, Route } from "react-router-dom";
 import ShowTicket from "./Components/ShowTicket";
+import { Main } from "./Components/Main";
 
 export function App() {
   return (
