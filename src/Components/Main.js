@@ -1,26 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProductCard } from "./ProductCard";
+import { getProducts } from "../Service-code/productData";
 import "./Styles/Main.css";
 import { Ticket } from "./Ticket";
 
 function calculateTotal(productArr) {
+  console.log(productArr);
   return productArr.reduce((sum, current) => {
     return sum + current[1].productTotal;
   }, 0);
 }
 
-export function Main({ productsArr }) {
-  const [tickets, setTickets] = useState([]);
+export function Main() {
+  const [status, setStatus] = useState("loading");
+  const [products, setProducts] = useState();
+  const [tickets, setTickets] = useState(new Map());
+  //todo: use a map instead of an array
+
+  useEffect(() => {
+    getProducts().then((response) => {
+      setStatus("ok");
+      setProducts(response);
+    });
+  }, []);
 
   function passProduct(productName, productPrice) {
     let productNum = 1;
 
-    tickets.forEach((ticket, ind) => {
+    Array.from(tickets).forEach((ticket) => {
       if (
         ticket[0].split("").slice(0, productName.length).join("") == productName
       ) {
         productNum = ticket[1].productNum + 1;
-        tickets.splice(ind, 1);
       }
     });
 
@@ -31,22 +42,29 @@ export function Main({ productsArr }) {
     }
     spaceStr = spaceStr + "$";
 
-    setTickets((prevTickets) => [
-      ...prevTickets,
-      [
-        `${productName}${spaceStr}${productPrice}`,
-        { productNum, productTotal: productNum * productPrice, productPrice },
-      ],
-    ]);
+    setTickets(
+      new Map(
+        tickets.set(`${productName}${spaceStr}${productPrice}`, {
+          productNum,
+          productTotal: productNum * productPrice,
+          productPrice,
+        })
+      )
+    );
+    console.log(tickets);
   }
 
-  let total = calculateTotal(tickets);
+  let total = calculateTotal(Array.from(tickets));
+
+  if (status === "loading") {
+    return <p>loading</p>;
+  }
 
   return (
     <main className="main">
-      <Ticket ticketsArr={tickets} total={Math.round(total)} />
+      <Ticket ticketsArr={Array.from(tickets)} total={Math.round(total)} />
       <div className="product-zone">
-        {productsArr.map((product) => {
+        {products.metals.map((product) => {
           return (
             <ProductCard
               name={product.name}

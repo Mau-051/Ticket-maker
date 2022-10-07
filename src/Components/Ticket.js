@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export function Ticket({ ticketsArr, total }) {
+  console.log(ticketsArr, total);
   return (
     <div className="ticket-zone">
       <h2>Ticket</h2>
