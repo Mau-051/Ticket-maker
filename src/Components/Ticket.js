@@ -1,6 +1,8 @@
 import React from "react";
 
 export function Ticket({ ticketsArr, total }) {
+  let savedTickets = false;
+
   return (
     <div className="ticket-zone">
       <h2>Ticket</h2>
@@ -19,7 +21,7 @@ export function Ticket({ ticketsArr, total }) {
           spaceStr = spaceStr + "$";
 
           return (
-            <p key={i}>
+            <p key={ticket[1].productName}>
               {ticket[1].productNum ? `X${ticket[1].productNum} ` : ""}
               {[
                 ticket[0].slice(0, ticket[1].productName.length),
@@ -33,13 +35,36 @@ export function Ticket({ ticketsArr, total }) {
 
         <p>Total--------------${total}</p>
       </div>
-      {ticketsArr.length ? (
-        <a href="/ticket" className="send-ticket">
-          save ticket
-        </a>
-      ) : (
-        ""
-      )}
+      <div className="ticket-btn-container">
+        {savedTickets ? (
+          <a
+            href="/saved-tickets"
+            className={
+              ticketsArr.length
+                ? "saved-tickets"
+                : "saved-tickets big-ticket-btn"
+            }
+          >
+            Saved {ticketsArr.length ? <br></br> : ""}
+            tickets
+          </a>
+        ) : (
+          ""
+        )}
+
+        {ticketsArr.length ? (
+          <a
+            href="/ticket"
+            className={
+              savedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
+            }
+          >
+            Save ticket
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }

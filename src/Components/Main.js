@@ -3,6 +3,7 @@ import { ProductCard } from "./ProductCard";
 import { getProducts } from "../Service-code/productData";
 import { Ticket } from "./Ticket";
 import "./Styles/Main.css";
+import { MainSkeleton } from "./SkeletonComps/MainSkeleton";
 
 function calculateTotal(productArr) {
   return productArr.reduce((sum, current) => {
@@ -26,7 +27,7 @@ export function Main() {
     let productNum = 1;
 
     Array.from(tickets).forEach((ticket) => {
-      if (ticket[1].productName == productName) {
+      if (ticket[1].productName === productName) {
         productNum = ticket[1].productNum + 1;
       }
     });
@@ -46,7 +47,7 @@ export function Main() {
   let total = calculateTotal(Array.from(tickets));
 
   if (status === "loading") {
-    return <p>loading</p>;
+    return <MainSkeleton />;
   }
 
   return (

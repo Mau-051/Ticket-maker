@@ -23,16 +23,32 @@ body {
 .ticket-zone .ticket p {
   font-size: 1.1vw;
 }
-.ticket-zone .send-ticket {
+.ticket-zone .ticket-btn-container {
+  width: 17vw;
+  margin: 1vw 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.ticket-zone .ticket-btn-container a {
   background-color: hsl(216.34deg, 70.58%, 36.67%);
   color: rgb(226, 226, 226);
   border-radius: 1.5vw;
   cursor: pointer;
-  padding: 2vw 0;
-  font-size: 1.8vw;
+  padding: 1vw 1vw;
+  font-size: 1vw;
   text-decoration: none;
-  margin: 2vw;
-  width: 12vw;
+}
+.ticket-zone .ticket-btn-container .big-ticket-btn {
+  padding: 1.5vw 0;
+  font-size: 1.5vw;
+  width: 11vw;
+}
+.ticket-zone .ticket-btn-container .save-ticket {
+  font-size: 1.2vw;
+  padding: 1.5vw 1vw;
+}
+.ticket-zone .ticket-btn-container .saved-tickets {
+  color: hsl(50deg, 100%, 59%);
 }
 .ticket-zone h2 {
   margin-bottom: 4vh;
@@ -41,12 +57,12 @@ body {
 
 .main {
   display: flex;
-  height: 100vh;
+  height: min(100%, 100vh);
 }
 .main .product-zone {
   min-width: 69.5vw;
   background-color: hsl(216.34deg, 70.58%, 36.67%);
-  padding: 5rem;
+  padding: 9.7vh 5vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -105,4 +121,39 @@ body {
   height: calc(14vw - 20%);
   width: calc(14vw - 20%);
   filter: grayscale(100%);
+}
+
+.skeleton {
+  -webkit-animation: skeleton-loading 0.7s linear infinite alternate;
+          animation: skeleton-loading 0.7s linear infinite alternate;
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text:last-child {
+  margin-bottom: 0;
+  width: 10rem;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200deg, 20%, 70%);
+  }
+  100% {
+    background-color: rgb(226, 226, 226);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200deg, 20%, 70%);
+  }
+  100% {
+    background-color: rgb(226, 226, 226);
+  }
 }/*# sourceMappingURL=Main.css.map */
