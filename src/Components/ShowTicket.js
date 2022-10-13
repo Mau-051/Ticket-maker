@@ -1,5 +1,5 @@
 import React from "react";
 
-export function ShowTicket() {
+export function ShowTicket({ globalTickets }) {
   return <div>ShowTicket</div>;
 }

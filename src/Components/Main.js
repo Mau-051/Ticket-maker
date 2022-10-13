@@ -11,10 +11,9 @@ function calculateTotal(productArr) {
   }, 0);
 }
 
-export function Main() {
+export function Main({ globalTickets, addGlobalTicket }) {
   const [status, setStatus] = useState("loading");
   const [products, setProducts] = useState();
-  const [tickets, setTickets] = useState(new Map());
 
   useEffect(() => {
     getProducts().then((response) => {
@@ -26,25 +25,21 @@ export function Main() {
   function passProduct(productName, productPrice) {
     let productNum = 1;
 
-    Array.from(tickets).forEach((ticket) => {
+    Array.from(globalTickets).forEach((ticket) => {
       if (ticket[1].productName === productName) {
         productNum = ticket[1].productNum + 1;
       }
     });
 
-    setTickets(
-      new Map(
-        tickets.set(`${productName}${productPrice}`, {
-          productNum,
-          productTotal: productNum * productPrice,
-          productName,
-          productPrice,
-        })
-      )
-    );
+    addGlobalTicket(`${productName}${productPrice}`, {
+      productNum,
+      productTotal: productNum * productPrice,
+      productName,
+      productPrice,
+    });
   }
 
-  let total = calculateTotal(Array.from(tickets));
+  let total = calculateTotal(Array.from(globalTickets));
 
   if (status === "loading") {
     return <MainSkeleton />;
@@ -52,7 +47,10 @@ export function Main() {
 
   return (
     <main className="main">
-      <Ticket ticketsArr={Array.from(tickets)} total={Math.round(total)} />
+      <Ticket
+        ticketsArr={Array.from(globalTickets)}
+        total={Math.round(total)}
+      />
       <div className="product-zone">
         {products.metals.map((product) => {
           return (
