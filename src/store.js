@@ -10,6 +10,15 @@ const useStore = create((set) => ({
       };
     });
   },
+  globalTicketsTotal: 0,
+  setGlobalTicketsTotal: (newTotal) => {
+    set((state) => {
+      state.globalTicketsTotal = newTotal;
+      return {
+        globalTicketsTotal: state.globalTicketsTotal,
+      };
+    });
+  },
 }));
 
 export default useStore;

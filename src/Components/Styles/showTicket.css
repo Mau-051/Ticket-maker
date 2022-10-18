@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+.show-container {
+  height: 100vh;
+  background-color: rgb(226, 226, 226);
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+}
+
+.show-home-btn {
+  background-color: hsl(50deg, 100%, 59%);
+  font-size: max(1.8vw, 2vh);
+  border-radius: 0.3em;
+  margin: 0.5vw;
+}
+
+.show-saved-btn {
+  background-color: hsl(216.34deg, 70.58%, 36.67%);
+  color: rgb(226, 226, 226);
+  font-size: max(1.8vw, 2vh);
+  border-radius: 0.3em;
+  margin: 0.5vw;
+}
+
+.show-ticket {
+  background-color: rgb(201, 201, 201);
+  border-radius: 2vw;
+  width: 17vw;
+  padding: 1vw 0;
+  margin: auto auto auto 25vw;
+  transform: scale(1.4);
+}
+.show-ticket p {
+  font-size: 1.1vw;
+}
+
+@media (max-width: 350px) {
+  .show-container {
+    flex-direction: column;
+  }
+  .show-ticket {
+    height: 45vh;
+    width: 60vw;
+    margin: 10vh auto auto;
+  }
+  .show-ticket p {
+    font-size: 3.5vw;
+  }
+}/*# sourceMappingURL=showTicket.css.map */

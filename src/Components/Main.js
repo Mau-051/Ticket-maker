@@ -6,12 +6,19 @@ import "./Styles/Main.css";
 import { MainSkeleton } from "./SkeletonComps/MainSkeleton";
 
 function calculateTotal(productArr) {
-  return productArr.reduce((sum, current) => {
-    return sum + current[1].productTotal;
-  }, 0);
+  return Math.round(
+    productArr.reduce((sum, current) => {
+      return sum + current[1].productTotal;
+    }, 0)
+  );
 }
 
-export function Main({ globalTickets, addGlobalTicket }) {
+export function Main({
+  globalTickets,
+  addGlobalTicket,
+  globalTicketsTotal,
+  setGlobalTicketsTotal,
+}) {
   const [status, setStatus] = useState("loading");
   const [products, setProducts] = useState();
 
@@ -39,7 +46,7 @@ export function Main({ globalTickets, addGlobalTicket }) {
     });
   }
 
-  let total = calculateTotal(Array.from(globalTickets));
+  setGlobalTicketsTotal(calculateTotal(Array.from(globalTickets)));
 
   if (status === "loading") {
     return <MainSkeleton />;
@@ -49,7 +56,7 @@ export function Main({ globalTickets, addGlobalTicket }) {
     <main className="main">
       <Ticket
         ticketsArr={Array.from(globalTickets)}
-        total={Math.round(total)}
+        total={globalTicketsTotal}
       />
       <div className="product-zone">
         {products.metals.map((product) => {

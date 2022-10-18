@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+@import "../Styles/Variables/variables.scss";
+@import "../Styles/Mixins/mixins.scss";
+
+.show-container {
+  height: 100vh;
+  background-color: $thirdary-color;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+}
+.show-home-btn {
+  background-color: $secondary-color;
+  font-size: max(1.8vw, 2vh);
+  border-radius: 0.3em;
+  margin: 0.5vw;
+}
+
+.show-saved-btn {
+  background-color: $primary-color;
+  color: $thirdary-color;
+  font-size: max(1.8vw, 2vh);
+  border-radius: 0.3em;
+  margin: 0.5vw;
+}
+
+.show-ticket {
+  @include ticket;
+  margin: auto auto auto 25vw;
+  transform: scale(1.4);
+}
+
+@media (max-width: 350px) {
+  .show-container {
+    flex-direction: column;
+  }
+  .show-ticket {
+    height: 45vh;
+    width: 60vw;
+    margin: 10vh auto auto;
+    p {
+      font-size: 3.5vw;
+    }
+  }
+}

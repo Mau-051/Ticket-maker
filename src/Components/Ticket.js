@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Ticket({ ticketsArr, total }) {
+  let navigate = useNavigate();
   let savedTickets = false;
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    navigate("ticket");
+  }
 
   return (
     <div className="ticket-zone">
@@ -9,7 +16,7 @@ export function Ticket({ ticketsArr, total }) {
       <div className="ticket">
         <p>Products</p>
         <p>-----------------------</p>
-        {ticketsArr.map((ticket, i) => {
+        {ticketsArr.map((ticket) => {
           let numOfSpace =
             18 -
             ticket[1].productName.length -
@@ -54,7 +61,7 @@ export function Ticket({ ticketsArr, total }) {
 
         {ticketsArr.length ? (
           <a
-            href="/ticket"
+            onClick={handleSubmit}
             className={
               savedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
             }
