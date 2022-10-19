@@ -11,7 +11,7 @@ export function ShowTicket({ globalTickets, globalTicketsTotal }) {
 
   return (
     <div className="show-container">
-      <div className="show-btn-container">
+      <div>
         <button className="show-home-btn" onClick={() => handleSubmit("/")}>
           home
         </button>

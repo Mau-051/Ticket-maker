@@ -29,14 +29,14 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.ticket-zone .ticket-btn-container a {
+.ticket-zone .ticket-btn-container button {
   background-color: hsl(216.34deg, 70.58%, 36.67%);
   color: rgb(226, 226, 226);
   border-radius: 1.5vw;
   cursor: pointer;
   padding: 1vw 1vw;
   font-size: 1vw;
-  text-decoration: none;
+  border: none;
 }
 .ticket-zone .ticket-btn-container .big-ticket-btn {
   padding: 1.5vw 0;
@@ -51,18 +51,24 @@ body {
   color: hsl(50deg, 100%, 59%);
 }
 .ticket-zone h2 {
-  margin-bottom: 4vh;
   font-size: 2vw;
+}
+
+.big-main {
+  height: 100%;
 }
 
 .main {
   display: flex;
-  height: min(100%, 100vh);
-}
-.main .product-zone {
-  min-width: 69.5vw;
+  height: 100vh;
   background-color: hsl(216.34deg, 70.58%, 36.67%);
-  padding: 9.7vh 5vw;
+}
+
+.product-zone {
+  height: 39vw;
+  width: 69.5vw;
+  background-color: hsl(216.34deg, 70.58%, 36.67%);
+  padding: 5vw 5vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -118,6 +124,8 @@ body {
 .product-img {
   border-radius: 20%;
   margin-top: 10%;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: calc(14vw - 20%);
   width: calc(14vw - 20%);
   filter: grayscale(100%);
@@ -140,6 +148,40 @@ body {
   width: 10rem;
 }
 
+@media (max-width: 600px) {
+  .product-zone {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ticket-zone {
+    width: 53.5vw;
+  }
+  .ticket-zone .ticket {
+    width: 30vw;
+    border-radius: 3vw;
+  }
+  .ticket-zone .ticket p {
+    font-size: 1.9vw;
+  }
+  .ticket-zone .ticket-btn-container {
+    width: 25vw;
+  }
+  .ticket-zone .ticket-btn-container button {
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    border-radius: 2vw;
+  }
+  .ticket-zone .ticket-btn-container .big-ticket-btn {
+    padding: 1.5vw 0;
+    font-size: 2.2vw;
+    width: 25vw;
+  }
+  .ticket-zone .ticket-btn-container .save-ticket {
+    font-size: 1.8vw;
+  }
+  .ticket-zone .ticket-btn-container .saved-tickets {
+    font-size: 1.8vw;
+  }
+}
 @-webkit-keyframes skeleton-loading {
   0% {
     background-color: hsl(200deg, 20%, 70%);
@@ -148,7 +190,6 @@ body {
     background-color: rgb(226, 226, 226);
   }
 }
-
 @keyframes skeleton-loading {
   0% {
     background-color: hsl(200deg, 20%, 70%);

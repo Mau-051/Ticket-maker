@@ -4,6 +4,6 @@ export function getProducts() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(mockProductData.Products);
-    }, 1000);
+    }, 500);
   });
 }

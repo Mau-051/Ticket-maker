@@ -3,15 +3,16 @@
   height: 100vh;
   background-color: rgb(226, 226, 226);
   text-align: center;
-  display: flex;
-  align-items: flex-start;
 }
 
 .show-home-btn {
   background-color: hsl(50deg, 100%, 59%);
   font-size: max(1.8vw, 2vh);
   border-radius: 0.3em;
-  margin: 0.5vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  padding: 0.5vw 1vw;
 }
 
 .show-saved-btn {
@@ -19,7 +20,10 @@
   color: rgb(226, 226, 226);
   font-size: max(1.8vw, 2vh);
   border-radius: 0.3em;
-  margin: 0.5vw;
+  margin: 1vw;
+  border: none;
+  cursor: pointer;
+  padding: 0.5vw 1vw;
 }
 
 .show-ticket {
@@ -27,23 +31,31 @@
   border-radius: 2vw;
   width: 17vw;
   padding: 1vw 0;
-  margin: auto auto auto 25vw;
-  transform: scale(1.4);
+  height: 40rem;
+  width: 25rem;
+  border-radius: 2rem;
+  margin: 0.5rem auto;
 }
 .show-ticket p {
   font-size: 1.1vw;
 }
+.show-ticket p {
+  font-size: 1.4rem;
+}
 
-@media (max-width: 350px) {
-  .show-container {
-    flex-direction: column;
-  }
+@media (max-width: 600px) {
   .show-ticket {
-    height: 45vh;
     width: 60vw;
-    margin: 10vh auto auto;
+    border-radius: 5vw;
+    margin: auto;
   }
   .show-ticket p {
     font-size: 3.5vw;
+  }
+  .show-home-btn {
+    margin: 1.5vw 1.5vw 3vw;
+  }
+  .show-saved-btn {
+    margin: 1.5vw 1.5vw 3vw;
   }
 }/*# sourceMappingURL=showTicket.css.map */

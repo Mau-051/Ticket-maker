@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 export function Ticket({ ticketsArr, total }) {
   let navigate = useNavigate();
-  let savedTickets = false;
+  let savedTickets = true;
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    navigate("ticket");
+  async function handleSubmit(path) {
+    navigate(path);
   }
 
   return (
@@ -44,8 +43,8 @@ export function Ticket({ ticketsArr, total }) {
       </div>
       <div className="ticket-btn-container">
         {savedTickets ? (
-          <a
-            href="/saved-tickets"
+          <button
+            onClick={() => handleSubmit("saved-tickets")}
             className={
               ticketsArr.length
                 ? "saved-tickets"
@@ -54,20 +53,20 @@ export function Ticket({ ticketsArr, total }) {
           >
             Saved {ticketsArr.length ? <br></br> : ""}
             tickets
-          </a>
+          </button>
         ) : (
           ""
         )}
 
         {ticketsArr.length ? (
-          <a
-            onClick={handleSubmit}
+          <button
+            onClick={() => handleSubmit("ticket")}
             className={
               savedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
             }
           >
             Save ticket
-          </a>
+          </button>
         ) : (
           ""
         )}

@@ -53,7 +53,7 @@ export function Main({
   }
 
   return (
-    <main className="main">
+    <main className={products.metals.length > 8 ? "main big-main" : "main"}>
       <Ticket
         ticketsArr={Array.from(globalTickets)}
         total={globalTicketsTotal}

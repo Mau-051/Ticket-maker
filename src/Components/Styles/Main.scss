@@ -24,14 +24,14 @@ body {
     margin: 1vw 0;
     display: flex;
     justify-content: space-evenly;
-    a {
+    button {
       background-color: $primary-color;
       color: $thirdary-color;
       border-radius: 1.5vw;
       cursor: pointer;
       padding: 1vw 1vw;
       font-size: 1vw;
-      text-decoration: none;
+      border: none;
     }
     .big-ticket-btn {
       padding: 1.5vw 0;
@@ -47,29 +47,35 @@ body {
     }
   }
   h2 {
-    margin-bottom: 4vh;
     font-size: 2vw;
   }
 }
 
+.big-main {
+  height: 100%;
+}
+
 .main {
   display: flex;
-  height: min(100%, 100vh);
-  .product-zone {
-    min-width: calc(4 * $grid-size + 3 * $grid-gap);
-    background-color: $primary-color;
-    padding: 9.7vh 5vw;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: $grid-gap;
-  }
+  height: 100vh;
+  background-color: $primary-color;
+}
+
+.product-zone {
+  height: 39vw;
+  width: calc(4 * $grid-size + 3 * $grid-gap);
+  background-color: $primary-color;
+  padding: 5vw 5vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: $grid-gap;
 }
 
 .product-card {
   font-family: "Rubik", sans-serif;
   background-color: $secondary-color;
-  @include border-radius;
+  border-radius: 20%;
   width: $grid-size;
   height: 17.5vw;
   border: none;
@@ -114,14 +120,12 @@ body {
 }
 
 .product-img {
-  @include border-radius;
+  border-radius: 20%;
   margin-top: 10%;
+  object-fit: cover;
   height: calc($grid-size - 20%);
   width: calc($grid-size - 20%);
   filter: grayscale(100%);
-}
-
-@media screen {
 }
 
 .skeleton {
@@ -138,6 +142,41 @@ body {
 .skeleton-text:last-child {
   margin-bottom: 0;
   width: 10rem;
+}
+
+@media (max-width: 600px) {
+  .product-zone {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ticket-zone {
+    width: calc(100vw - (3 * $grid-size + 1 * $grid-gap));
+    .ticket {
+      width: 30vw;
+      border-radius: 3vw;
+      p {
+        font-size: 1.9vw;
+      }
+    }
+    .ticket-btn-container {
+      width: 25vw;
+      button {
+        padding: 1vw 2vw;
+        font-size: 1vw;
+        border-radius: 2vw;
+      }
+      .big-ticket-btn {
+        padding: 1.5vw 0;
+        font-size: 2.2vw;
+        width: 25vw;
+      }
+      .save-ticket {
+        font-size: 1.8vw;
+      }
+      .saved-tickets {
+        font-size: 1.8vw;
+      }
+    }
+  }
 }
 
 @keyframes skeleton-loading {

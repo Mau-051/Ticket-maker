@@ -6,40 +6,45 @@
   height: 100vh;
   background-color: $thirdary-color;
   text-align: center;
-  display: flex;
-  align-items: flex-start;
 }
+
 .show-home-btn {
   background-color: $secondary-color;
-  font-size: max(1.8vw, 2vh);
-  border-radius: 0.3em;
-  margin: 0.5vw;
+  @include show-btn;
 }
 
 .show-saved-btn {
   background-color: $primary-color;
   color: $thirdary-color;
-  font-size: max(1.8vw, 2vh);
-  border-radius: 0.3em;
-  margin: 0.5vw;
+  @include show-btn;
 }
 
 .show-ticket {
   @include ticket;
-  margin: auto auto auto 25vw;
-  transform: scale(1.4);
+  height: 40rem;
+  width: 25rem;
+  border-radius: 2rem;
+  margin: 0.5rem auto;
+
+  p {
+    font-size: 1.4rem;
+  }
 }
 
-@media (max-width: 350px) {
-  .show-container {
-    flex-direction: column;
-  }
+@media (max-width: 600px) {
   .show-ticket {
-    height: 45vh;
     width: 60vw;
-    margin: 10vh auto auto;
+    border-radius: 5vw;
+    margin: auto;
     p {
       font-size: 3.5vw;
     }
+  }
+  .show-home-btn {
+    margin: 1.5vw 1.5vw 3vw;
+  }
+
+  .show-saved-btn {
+    margin: 1.5vw 1.5vw 3vw;
   }
 }
