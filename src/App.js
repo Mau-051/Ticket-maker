@@ -5,8 +5,9 @@ import { SavedTickets } from "./Components/SavedTickets";
 import useStore from "./store.js";
 
 export function App() {
-  const globalTickets = useStore((state) => state.globalTickets);
+  const globalTicket = useStore((state) => state.globalTicket);
   const globalTicketsTotal = useStore((state) => state.globalTicketsTotal);
+  const savedTickets = useStore((state) => state.savedTickets);
   const addGlobalTicket = useStore((state) => state.addGlobalTicket);
   const setGlobalTicketsTotal = useStore(
     (state) => state.setGlobalTicketsTotal
@@ -18,7 +19,7 @@ export function App() {
         path="/"
         element={
           <Main
-            globalTickets={globalTickets}
+            globalTicket={globalTicket}
             globalTicketsTotal={globalTicketsTotal}
             addGlobalTicket={addGlobalTicket}
             setGlobalTicketsTotal={setGlobalTicketsTotal}
@@ -29,14 +30,14 @@ export function App() {
         path="/ticket"
         element={
           <ShowTicket
-            globalTickets={globalTickets}
+            globalTicket={globalTicket}
             globalTicketsTotal={globalTicketsTotal}
           />
         }
       />
       <Route
         path="/saved-tickets"
-        element={<SavedTickets globalTickets={globalTickets} />}
+        element={<SavedTickets savedTickets={savedTickets} />}
       />
     </Routes>
   );

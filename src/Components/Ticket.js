@@ -1,12 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useStore from "../store.js";
 
 export function Ticket({ ticketsArr, total }) {
   let navigate = useNavigate();
-  let savedTickets = true;
+
+  const savedTickets = useStore((state) => state.savedTickets);
+  const addSavedTicket = useStore((state) => state.addSavedTicket);
+
+  let boolsavedTickets = false;
+  if (savedTickets.length) {
+    boolsavedTickets = true;
+  }
 
   async function handleSubmit(path) {
     navigate(path);
+    if (path === "ticket") {
+      addSavedTicket([ticketsArr, total]);
+    }
   }
 
   return (
@@ -42,7 +53,7 @@ export function Ticket({ ticketsArr, total }) {
         <p>Total--------------${total}</p>
       </div>
       <div className="ticket-btn-container">
-        {savedTickets ? (
+        {boolsavedTickets ? (
           <button
             onClick={() => handleSubmit("saved-tickets")}
             className={
@@ -62,7 +73,7 @@ export function Ticket({ ticketsArr, total }) {
           <button
             onClick={() => handleSubmit("ticket")}
             className={
-              savedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
+              boolsavedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
             }
           >
             Save ticket

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+@import "../Styles/Variables/variables.scss";
+@import "../Styles/Mixins/mixins.scss";
+
+body {
+  background-color: $primary-color;
+  text-align: center;
+}
+
+.saved-home-btn {
+  @include show-btn;
+  position: absolute;
+  left: 1vw;
+  top: 1vw;
+  margin: 0;
+
+  background-color: $secondary-color;
+}
+h1 {
+  color: $secondary-color;
+}
+.saved-container {
+  margin-top: 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  .saved-ticket {
+    @include ticket;
+    margin-bottom: 4vw;
+  }
+}

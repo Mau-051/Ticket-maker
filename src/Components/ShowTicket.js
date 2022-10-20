@@ -1,11 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Styles/showTicket.css";
+import useStore from "../store.js";
+import "./Styles/ShowTicket.css";
 
-export function ShowTicket({ globalTickets, globalTicketsTotal }) {
+export function ShowTicket({ globalTicket, globalTicketsTotal }) {
   let navigate = useNavigate();
 
+  const clearGlobalTicket = useStore((state) => state.clearGlobalTicket);
+
   async function handleSubmit(path) {
+    clearGlobalTicket();
     navigate(path);
   }
 
@@ -13,7 +17,7 @@ export function ShowTicket({ globalTickets, globalTicketsTotal }) {
     <div className="show-container">
       <div>
         <button className="show-home-btn" onClick={() => handleSubmit("/")}>
-          home
+          Home
         </button>
         <button
           className="show-saved-btn"
@@ -25,7 +29,7 @@ export function ShowTicket({ globalTickets, globalTicketsTotal }) {
       <main className="show-ticket">
         <p>Products</p>
         <p>-----------------------</p>
-        {Array.from(globalTickets).map((ticket) => {
+        {Array.from(globalTicket).map((ticket) => {
           let numOfSpace =
             18 -
             ticket[1].productName.length -

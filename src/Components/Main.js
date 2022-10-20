@@ -14,9 +14,9 @@ function calculateTotal(productArr) {
 }
 
 export function Main({
-  globalTickets,
-  addGlobalTicket,
+  globalTicket,
   globalTicketsTotal,
+  addGlobalTicket,
   setGlobalTicketsTotal,
 }) {
   const [status, setStatus] = useState("loading");
@@ -32,7 +32,7 @@ export function Main({
   function passProduct(productName, productPrice) {
     let productNum = 1;
 
-    Array.from(globalTickets).forEach((ticket) => {
+    Array.from(globalTicket).forEach((ticket) => {
       if (ticket[1].productName === productName) {
         productNum = ticket[1].productNum + 1;
       }
@@ -46,7 +46,7 @@ export function Main({
     });
   }
 
-  setGlobalTicketsTotal(calculateTotal(Array.from(globalTickets)));
+  setGlobalTicketsTotal(calculateTotal(Array.from(globalTicket)));
 
   if (status === "loading") {
     return <MainSkeleton />;
@@ -55,7 +55,7 @@ export function Main({
   return (
     <main className={products.metals.length > 8 ? "main big-main" : "main"}>
       <Ticket
-        ticketsArr={Array.from(globalTickets)}
+        ticketsArr={Array.from(globalTicket)}
         total={globalTicketsTotal}
       />
       <div className="product-zone">

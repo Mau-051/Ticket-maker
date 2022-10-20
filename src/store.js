@@ -1,12 +1,20 @@
 import create from "zustand";
 
 const useStore = create((set) => ({
-  globalTickets: new Map(),
+  globalTicket: new Map(),
   addGlobalTicket: (ticketStr, ticketObj) => {
     set((state) => {
-      state.globalTickets.set(ticketStr, ticketObj);
+      state.globalTicket.set(ticketStr, ticketObj);
       return {
-        globalTickets: new Map(state.globalTickets),
+        globalTicket: new Map(state.globalTicket),
+      };
+    });
+  },
+  clearGlobalTicket: () => {
+    set((state) => {
+      state.globalTicket.clear();
+      return {
+        globalTicket: new Map(state.globalTicket),
       };
     });
   },
@@ -16,6 +24,15 @@ const useStore = create((set) => ({
       state.globalTicketsTotal = newTotal;
       return {
         globalTicketsTotal: state.globalTicketsTotal,
+      };
+    });
+  },
+  savedTickets: [],
+  addSavedTicket: (newTicket) => {
+    set((state) => {
+      state.savedTickets.push(newTicket);
+      return {
+        savedTickets: state.savedTickets,
       };
     });
   },
