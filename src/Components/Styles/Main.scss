@@ -4,15 +4,18 @@
 
 body {
   margin: 0;
+  background-color: $primary-color;
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .ticket-zone {
-  width: calc(100vw - (4 * $grid-size + 3 * $grid-gap));
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: calc(92vw - (4 * $grid-size + 3 * $grid-gap));
   background-color: $thirdary-color;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,25 +54,15 @@ body {
   }
 }
 
-.big-main {
-  height: 100%;
-}
-
-.main {
-  display: flex;
-  height: 100vh;
-  background-color: $primary-color;
-}
-
 .product-zone {
-  height: 39vw;
-  width: calc(4 * $grid-size + 3 * $grid-gap);
-  background-color: $primary-color;
-  padding: 5vw 5vw;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: $grid-gap;
+  margin-left: 21.5vw;
+  .product-cards {
+    padding: 4.7vw 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $grid-gap;
+  }
 }
 
 .product-card {
@@ -146,10 +139,15 @@ body {
 
 @media (max-width: 600px) {
   .product-zone {
-    grid-template-columns: repeat(3, 1fr);
+    margin: 4.7vw 5vw 0 38.5vw;
+    .product-cards {
+      padding: 0;
+      width: 60vw;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .ticket-zone {
-    width: calc(100vw - (3 * $grid-size + 1 * $grid-gap));
+    width: calc(80vw - (3 * $grid-size + 1 * $grid-gap));
     .ticket {
       width: 30vw;
       border-radius: 3vw;

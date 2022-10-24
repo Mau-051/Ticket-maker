@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "./Styles/SavedTickets.css";
 
 export function SavedTickets({ savedTickets }) {
@@ -18,7 +19,7 @@ export function SavedTickets({ savedTickets }) {
       <div className="saved-container">
         {savedTickets.map((ticket) => {
           return (
-            <div className="saved-ticket">
+            <div key={uuidv4()} className="saved-ticket">
               <p>Products</p>
               <p>-----------------------</p>
 
@@ -34,18 +35,16 @@ export function SavedTickets({ savedTickets }) {
                 spaceStr = spaceStr + "$";
 
                 return (
-                  <>
-                    <p key={products[1].productName}>
-                      {products[1].productNum
-                        ? `X${products[1].productNum} `
-                        : ""}
-                      {[
-                        products[0].slice(0, products[1].productName.length),
-                        spaceStr,
-                        products[0].slice(products[1].productName.length),
-                      ]}
-                    </p>
-                  </>
+                  <p key={uuidv4()}>
+                    {products[1].productNum
+                      ? `X${products[1].productNum} `
+                      : ""}
+                    {[
+                      products[0].slice(0, products[1].productName.length),
+                      spaceStr,
+                      products[0].slice(products[1].productName.length),
+                    ]}
+                  </p>
                 );
               })}
 

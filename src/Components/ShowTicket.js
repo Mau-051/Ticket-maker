@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import useStore from "../store.js";
 import "./Styles/ShowTicket.css";
 
@@ -41,7 +42,7 @@ export function ShowTicket({ globalTicket, globalTicketsTotal }) {
           spaceStr = spaceStr + "$";
 
           return (
-            <p key={ticket[1].productName}>
+            <p key={uuidv4()}>
               {ticket[1].productNum ? `X${ticket[1].productNum} ` : ""}
               {[
                 ticket[0].slice(0, ticket[1].productName.length),

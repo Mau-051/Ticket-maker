@@ -31,10 +31,9 @@
   border-radius: 2vw;
   width: 17vw;
   padding: 1vw 0;
-  height: 40rem;
   width: 25rem;
   border-radius: 2rem;
-  margin: 0.5rem auto;
+  margin: 0 auto;
 }
 .show-ticket p {
   font-size: 1.1vw;
@@ -45,17 +44,19 @@
 
 @media (max-width: 600px) {
   .show-ticket {
-    width: 60vw;
+    width: 65vw;
     border-radius: 5vw;
     margin: auto;
   }
   .show-ticket p {
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
   .show-home-btn {
-    margin: 1.5vw 1.5vw 3vw;
+    margin: 2vw 1.5vw 3vw;
+    font-size: 7vw;
   }
   .show-saved-btn {
-    margin: 1.5vw 1.5vw 3vw;
+    margin: 2vw 1.5vw 3vw;
+    font-size: 7vw;
   }
 }/*# sourceMappingURL=showTicket.css.map */

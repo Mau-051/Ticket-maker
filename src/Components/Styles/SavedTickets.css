@@ -11,19 +11,20 @@ body {
   border: none;
   cursor: pointer;
   padding: 0.5vw 1vw;
+  font-size: 2vw;
   position: absolute;
   left: 1vw;
-  top: 1vw;
-  margin: 0;
+  top: 0.7vw;
   background-color: hsl(50deg, 100%, 59%);
 }
 
 h1 {
   color: hsl(50deg, 100%, 59%);
+  font-size: 3vw;
+  margin-top: 1.5vw;
 }
 
 .saved-container {
-  margin-top: 4vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -35,7 +36,35 @@ h1 {
   width: 17vw;
   padding: 1vw 0;
   margin-bottom: 4vw;
+  width: 21vw;
+  padding: 1.5vw 0;
 }
 .saved-container .saved-ticket p {
   font-size: 1.1vw;
+}
+.saved-container .saved-ticket p {
+  font-size: 1.3vw;
+}
+
+@media (max-width: 600px) {
+  .saved-home-btn {
+    font-size: 5vw;
+    left: 2vw;
+    top: 1.5vw;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+  .saved-container {
+    margin-top: 4vw;
+  }
+  .saved-container .saved-ticket {
+    margin-bottom: 7vw;
+    width: 42vw;
+    padding: 2vw 0;
+    border-radius: 3.5vw;
+  }
+  .saved-container .saved-ticket p {
+    font-size: 3vw;
+  }
 }/*# sourceMappingURL=SavedTickets.css.map */

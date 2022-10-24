@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ProductCard } from "./ProductCard";
 import { getProducts } from "../Service-code/productData";
 import { Ticket } from "./Ticket";
-import "./Styles/Main.css";
+import { v4 as uuidv4 } from "uuid";
 import { MainSkeleton } from "./SkeletonComps/MainSkeleton";
+import "./Styles/Main.css";
 
 function calculateTotal(productArr) {
   return Math.round(
@@ -53,23 +54,25 @@ export function Main({
   }
 
   return (
-    <main className={products.metals.length > 8 ? "main big-main" : "main"}>
+    <main>
       <Ticket
         ticketsArr={Array.from(globalTicket)}
         total={globalTicketsTotal}
       />
       <div className="product-zone">
-        {products.metals.map((product) => {
-          return (
-            <ProductCard
-              name={product.name}
-              imageURL={product.imageURL}
-              price={product.price}
-              passProduct={passProduct}
-              key={product.key}
-            />
-          );
-        })}
+        <div className="product-cards">
+          {products.metals.map((product) => {
+            return (
+              <ProductCard
+                name={product.name}
+                imageURL={product.imageURL}
+                price={product.price}
+                passProduct={passProduct}
+                key={uuidv4()}
+              />
+            );
+          })}
+        </div>
       </div>
     </main>
   );

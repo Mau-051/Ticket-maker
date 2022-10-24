@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import { ProductCardSkeleton } from "./ProductCardSkeleton";
 import { TicketSkeleton } from "./TicketSkeleton";
 
@@ -7,9 +8,11 @@ export function MainSkeleton() {
     <main className="main">
       <TicketSkeleton />
       <div className="product-zone">
-        {[...Array(8)].map((_, ind) => {
-          return <ProductCardSkeleton key={`productSkeleton${ind}`} />;
-        })}
+        <div className="product-cards">
+          {[...Array(8)].map((_, ind) => {
+            return <ProductCardSkeleton key={uuidv4()} />;
+          })}
+        </div>
       </div>
     </main>
   );

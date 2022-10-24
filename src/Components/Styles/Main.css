@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
 body {
   margin: 0;
+  background-color: hsl(216.34deg, 70.58%, 36.67%);
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .ticket-zone {
-  width: 30.5vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 22.5vw;
   background-color: rgb(226, 226, 226);
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,21 +57,11 @@ body {
   font-size: 2vw;
 }
 
-.big-main {
-  height: 100%;
-}
-
-.main {
-  display: flex;
-  height: 100vh;
-  background-color: hsl(216.34deg, 70.58%, 36.67%);
-}
-
 .product-zone {
-  height: 39vw;
-  width: 69.5vw;
-  background-color: hsl(216.34deg, 70.58%, 36.67%);
-  padding: 5vw 5vw;
+  margin-left: 21.5vw;
+}
+.product-zone .product-cards {
+  padding: 4.7vw 5vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -150,10 +143,15 @@ body {
 
 @media (max-width: 600px) {
   .product-zone {
+    margin: 4.7vw 5vw 0 38.5vw;
+  }
+  .product-zone .product-cards {
+    padding: 0;
+    width: 60vw;
     grid-template-columns: repeat(3, 1fr);
   }
   .ticket-zone {
-    width: 53.5vw;
+    width: 33.5vw;
   }
   .ticket-zone .ticket {
     width: 30vw;
