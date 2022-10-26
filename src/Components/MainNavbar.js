@@ -4,14 +4,18 @@ import useStore from "../store.js";
 
 export function MainNavbar({ productsKeysArr }) {
   const setCurrentProduct = useStore((state) => state.setCurrentProduct);
+  const currentProduct = useStore((state) => state.currentProduct);
 
   return (
     <div>
       <ul className="main-navbar">
-        {productsKeysArr.map((productKey = "hdhduhd") => {
+        {productsKeysArr.map((productKey) => {
           return (
             <li key={uuidv4()}>
-              <button onClick={() => setCurrentProduct(productKey)}>
+              <button
+                className={currentProduct === productKey ? "active" : ""}
+                onClick={() => setCurrentProduct(productKey)}
+              >
                 {productKey.toUpperCase()}
               </button>
             </li>

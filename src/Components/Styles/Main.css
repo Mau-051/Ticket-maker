@@ -45,7 +45,8 @@ body {
   background-color: rgba(0, 0, 0, 0.089);
 }
 .main-navbar li button.active {
-  color: hsl(216.34deg, 70.58%, 36.67%);
+  color: hsl(50deg, 100%, 59%);
+  background-color: rgba(0, 0, 0, 0.089);
 }
 
 .ticket-zone {
