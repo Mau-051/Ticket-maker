@@ -4,50 +4,64 @@
       {
         "name": "Copper",
         "imageURL": "https://images.unsplash.com/photo-1628694647734-bf4aedeede1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        "price": 78.4,
-        "key": "qwiuhduh87dy98o2eo2wiu"
+        "price": 78.4
       },
       {
         "name": "Aluminium",
         "imageURL": "https://images.unsplash.com/photo-1611110321197-3b43447c00e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "price": 56.5,
-        "key": "qwiuhdSGdSvrzb2eo2wiu"
+        "price": 56.5
       },
       {
         "name": "Cans",
         "imageURL": "https://images.unsplash.com/photo-1561503412-852800622772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80",
-        "price": 17.3,
-        "key": "qwiuhGgrdgrgo2wiu"
+        "price": 17.3
       },
       {
         "name": "Steel",
         "imageURL": "https://images.unsplash.com/photo-1615512050724-57a80ade17ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "price": 20.7,
-        "key": "qwiuhduHSDgdgtdeo2wiu"
+        "price": 20.7
       },
       {
         "name": "Beams",
         "imageURL": "https://images.unsplash.com/photo-1508337323540-f5d861907573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        "price": 300,
-        "key": "qwzFSDdtrhgzdrg2eo2wiu"
+        "price": 300
       },
       {
         "name": "Barrels",
         "imageURL": "https://images.unsplash.com/photo-1534072700421-3100bd80c44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-        "price": 250,
-        "key": "qwiudFfxjcugdzg2wiu"
+        "price": 250
       },
       {
         "name": "Scrap",
         "imageURL": "https://images.unsplash.com/photo-1625662276901-4a7ec44fbeed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80",
-        "price": 2,
-        "key": "qwiuzdthfbzdeo2wiu"
+        "price": 2
       },
       {
         "name": "Bronze",
         "imageURL": "https://images.unsplash.com/photo-1596394723269-b2cbca4e6313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-        "price": 38,
-        "key": "qwidzzdfbzbdz"
+        "price": 38
+      }
+    ],
+    "recyclables": [
+      {
+        "name": "PET",
+        "imageURL": "https://images.unsplash.com/photo-1571727153934-b9e0059b7ab2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "price": 2.2
+      },
+      {
+        "name": "Cardboard",
+        "imageURL": "https://images.unsplash.com/photo-1507560461415-997cd00bfd45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+        "price": 1.4
+      },
+      {
+        "name": "Paper",
+        "imageURL": "https://images.unsplash.com/photo-1513705153361-9bc726c8db67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "price": 0.5
+      },
+      {
+        "name": "Glass",
+        "imageURL": "https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+        "price": 1.25
       }
     ]
   }

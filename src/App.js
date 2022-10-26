@@ -7,11 +7,6 @@ import useStore from "./store.js";
 export function App() {
   const globalTicket = useStore((state) => state.globalTicket);
   const globalTicketsTotal = useStore((state) => state.globalTicketsTotal);
-  const savedTickets = useStore((state) => state.savedTickets);
-  const addGlobalTicket = useStore((state) => state.addGlobalTicket);
-  const setGlobalTicketsTotal = useStore(
-    (state) => state.setGlobalTicketsTotal
-  );
 
   return (
     <Routes>
@@ -21,8 +16,6 @@ export function App() {
           <Main
             globalTicket={globalTicket}
             globalTicketsTotal={globalTicketsTotal}
-            addGlobalTicket={addGlobalTicket}
-            setGlobalTicketsTotal={setGlobalTicketsTotal}
           />
         }
       />
@@ -35,10 +28,7 @@ export function App() {
           />
         }
       />
-      <Route
-        path="/saved-tickets"
-        element={<SavedTickets savedTickets={savedTickets} />}
-      />
+      <Route path="/saved-tickets" element={<SavedTickets />} />
     </Routes>
   );
 }

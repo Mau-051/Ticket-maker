@@ -2,9 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import "./Styles/SavedTickets.css";
+import useStore from "../store.js";
 
-export function SavedTickets({ savedTickets }) {
+export function SavedTickets() {
   let navigate = useNavigate();
+
+  const savedTickets = useStore((state) => state.savedTickets);
 
   async function handleSubmit(path) {
     navigate(path);

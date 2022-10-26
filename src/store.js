@@ -36,6 +36,15 @@ const useStore = create((set) => ({
       };
     });
   },
+  currentProduct: "",
+  setCurrentProduct: (newCurrent) => {
+    set((state) => {
+      state.currentProduct = newCurrent;
+      return {
+        currentProduct: state.currentProduct,
+      };
+    });
+  },
 }));
 
 export default useStore;

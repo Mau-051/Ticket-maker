@@ -7,6 +7,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 1vw;
+  height: 0.7vw;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.2vw rgb(226, 226, 226);
+  border-radius: 0.4vw;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(50deg, 100%, 59%);
+  border-radius: 0.4vw;
+}
+
+.main-navbar {
+  list-style-type: none;
+  margin: 0.6vw 0 1.3vw 26vw;
+  width: 70vw;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.main-navbar li button {
+  font-size: 2vw;
+  display: block;
+  color: rgb(226, 226, 226);
+  text-align: center;
+  text-decoration: none;
+  padding: 1vw 0.5vw 0;
+  margin: 0 0.5vw;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.main-navbar li button:hover {
+  background-color: rgba(0, 0, 0, 0.089);
+}
+.main-navbar li button.active {
+  color: hsl(216.34deg, 70.58%, 36.67%);
+}
+
 .ticket-zone {
   position: fixed;
   top: 0;
@@ -58,10 +99,10 @@ body {
 }
 
 .product-zone {
-  margin-left: 21.5vw;
+  margin-left: 22.5vw;
 }
 .product-zone .product-cards {
-  padding: 4.7vw 5vw;
+  padding: 0.5vw 3vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -142,6 +183,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .main-navbar {
+    margin-left: 38.5vw;
+    width: 57vw;
+  }
   .product-zone {
     margin: 4.7vw 5vw 0 38.5vw;
   }
