@@ -31,9 +31,26 @@ h1 {
     @include ticket;
     margin-bottom: 4vw;
     width: 21vw;
-    padding: 1.5vw 0;
+    padding: 0;
+    .delete-saved-ticket-btn {
+      float: right;
+      background-color: rgb(255, 124, 100);
+      border: 0;
+      cursor: pointer;
+      border-radius: 1vw 2vw 1vw 1vw;
+      height: 2.7vw;
+      width: 3vw;
+      font-size: 1.5vw;
+    }
     p {
       font-size: 1.3vw;
+      &.products {
+        margin-top: 2vw;
+        margin-left: 3.5vw;
+      }
+      &.total {
+        margin-bottom: 3vw;
+      }
     }
   }
 }

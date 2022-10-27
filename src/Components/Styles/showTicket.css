@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
-.show-container {
-  height: 100vh;
-  background-color: rgb(226, 226, 226);
-  text-align: center;
-}
-
 .show-home-btn {
   background-color: hsl(50deg, 100%, 59%);
   font-size: max(1.8vw, 2vh);
@@ -13,6 +7,7 @@
   border: none;
   cursor: pointer;
   padding: 0.5vw 1vw;
+  font-size: 2vw;
 }
 
 .show-saved-btn {
@@ -24,6 +19,7 @@
   border: none;
   cursor: pointer;
   padding: 0.5vw 1vw;
+  padding: 0.7vw;
 }
 
 .show-ticket {
@@ -31,15 +27,15 @@
   border-radius: 2vw;
   width: 17vw;
   padding: 1vw 0;
-  width: 25rem;
+  width: 30vw;
   border-radius: 2rem;
-  margin: 0 auto;
+  margin: 0 auto 2vw;
 }
 .show-ticket p {
   font-size: 1.1vw;
 }
 .show-ticket p {
-  font-size: 1.4rem;
+  font-size: 1.5vw;
 }
 
 @media (max-width: 600px) {

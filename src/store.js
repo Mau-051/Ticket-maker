@@ -36,6 +36,14 @@ const useStore = create((set) => ({
       };
     });
   },
+  removeSavedTicket: (ticketInd) => {
+    set((state) => {
+      state.savedTickets.splice(ticketInd, 1);
+      return {
+        savedTickets: state.savedTickets,
+      };
+    });
+  },
   currentProduct: "",
   setCurrentProduct: (newCurrent) => {
     set((state) => {

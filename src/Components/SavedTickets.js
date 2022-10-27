@@ -2,28 +2,35 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import "./Styles/SavedTickets.css";
+import { FaTrash, FaHome } from "react-icons/fa";
 import useStore from "../store.js";
 
 export function SavedTickets() {
   let navigate = useNavigate();
 
   const savedTickets = useStore((state) => state.savedTickets);
-
-  async function handleSubmit(path) {
-    navigate(path);
+  const removeSavedTicket = useStore((state) => state.removeSavedTicket);
+  function removeSavedTicketkk(i) {
+    removeSavedTicket(i);
   }
 
   return (
     <>
-      <button className="saved-home-btn" onClick={() => handleSubmit("/")}>
-        Home
+      <button className="saved-home-btn" onClick={() => navigate("/")}>
+        <FaHome />
       </button>
       <h1>SAVED TICKETS</h1>
       <div className="saved-container">
-        {savedTickets.map((ticket) => {
+        {savedTickets.map((ticket, ticketInd) => {
           return (
             <div key={uuidv4()} className="saved-ticket">
-              <p>Products</p>
+              <button
+                className="delete-saved-ticket-btn"
+                onClick={() => removeSavedTicketkk(ticketInd)}
+              >
+                <FaTrash />
+              </button>
+              <p className="products">Products</p>
               <p>-----------------------</p>
 
               {ticket[0].map((products) => {
@@ -52,7 +59,7 @@ export function SavedTickets() {
               })}
 
               <p>-----------------------</p>
-              <p>Total--------------${ticket[1]}</p>
+              <p className="total">Total--------------${ticket[1]}</p>
             </div>
           );
         })}

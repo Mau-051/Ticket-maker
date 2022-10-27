@@ -2,31 +2,26 @@
 @import "../Styles/Variables/variables.scss";
 @import "../Styles/Mixins/mixins.scss";
 
-.show-container {
-  height: 100vh;
-  background-color: $thirdary-color;
-  text-align: center;
-}
-
 .show-home-btn {
   background-color: $secondary-color;
   @include show-btn;
+  font-size: 2vw;
 }
 
 .show-saved-btn {
   background-color: $primary-color;
   color: $thirdary-color;
   @include show-btn;
+  padding: 0.7vw;
 }
 
 .show-ticket {
   @include ticket;
-  width: 25rem;
+  width: 30vw;
   border-radius: 2rem;
-  margin: 0 auto;
-
+  margin: 0 auto 2vw;
   p {
-    font-size: 1.4rem;
+    font-size: 1.5vw;
   }
 }
 

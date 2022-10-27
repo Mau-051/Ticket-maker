@@ -11,3 +11,5 @@ it's a point of sale type app made with react
 [zustand](https://zustand-demo.pmnd.rs/).
 
 [sass](https://sass-lang.com/).
+
+[font-awesome](https://fontawesome.com/).

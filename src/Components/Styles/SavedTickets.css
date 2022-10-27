@@ -37,13 +37,30 @@ h1 {
   padding: 1vw 0;
   margin-bottom: 4vw;
   width: 21vw;
-  padding: 1.5vw 0;
+  padding: 0;
 }
 .saved-container .saved-ticket p {
   font-size: 1.1vw;
 }
+.saved-container .saved-ticket .delete-saved-ticket-btn {
+  float: right;
+  background-color: rgb(255, 124, 100);
+  border: 0;
+  cursor: pointer;
+  border-radius: 1vw 2vw 1vw 1vw;
+  height: 2.7vw;
+  width: 3vw;
+  font-size: 1.5vw;
+}
 .saved-container .saved-ticket p {
   font-size: 1.3vw;
+}
+.saved-container .saved-ticket p.products {
+  margin-top: 2vw;
+  margin-left: 3.5vw;
+}
+.saved-container .saved-ticket p.total {
+  margin-bottom: 3vw;
 }
 
 @media (max-width: 600px) {

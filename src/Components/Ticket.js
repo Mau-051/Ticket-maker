@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { FaTrash, FaSave } from "react-icons/fa";
 import useStore from "../store.js";
 
 export function Ticket({ ticketsArr, total }) {
@@ -8,6 +9,7 @@ export function Ticket({ ticketsArr, total }) {
 
   const savedTickets = useStore((state) => state.savedTickets);
   const addSavedTicket = useStore((state) => state.addSavedTicket);
+  const clearGlobalTicket = useStore((state) => state.clearGlobalTicket);
 
   let boolsavedTickets = false;
   if (savedTickets.length) {
@@ -77,12 +79,22 @@ export function Ticket({ ticketsArr, total }) {
               boolsavedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
             }
           >
-            Save ticket
+            <FaSave />
           </button>
         ) : (
           ""
         )}
       </div>
+      {ticketsArr.length ? (
+        <button
+          className="delete-ticket-btn"
+          onClick={() => clearGlobalTicket()}
+        >
+          <FaTrash />
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

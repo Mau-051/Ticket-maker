@@ -6,6 +6,10 @@ export function MainNavbar({ productsKeysArr }) {
   const setCurrentProduct = useStore((state) => state.setCurrentProduct);
   const currentProduct = useStore((state) => state.currentProduct);
 
+  if (!currentProduct) {
+    setCurrentProduct(productsKeysArr[0]);
+  }
+
   return (
     <div>
       <ul className="main-navbar">

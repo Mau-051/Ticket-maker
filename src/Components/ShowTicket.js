@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { FaHome } from "react-icons/fa";
 import useStore from "../store.js";
 import "./Styles/ShowTicket.css";
 
@@ -18,7 +19,7 @@ export function ShowTicket({ globalTicket, globalTicketsTotal }) {
     <div className="show-container">
       <div>
         <button className="show-home-btn" onClick={() => handleSubmit("/")}>
-          Home
+          <FaHome />
         </button>
         <button
           className="show-saved-btn"

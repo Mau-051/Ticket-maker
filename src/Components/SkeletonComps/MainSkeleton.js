@@ -5,15 +5,18 @@ import { TicketSkeleton } from "./TicketSkeleton";
 
 export function MainSkeleton() {
   return (
-    <main className="main">
-      <TicketSkeleton />
-      <div className="product-zone">
-        <div className="product-cards">
-          {[...Array(8)].map((_, ind) => {
-            return <ProductCardSkeleton key={uuidv4()} />;
-          })}
+    <>
+      <div className="main-navbar sk" />
+      <main className="main">
+        <TicketSkeleton />
+        <div className="product-zone">
+          <div className="product-cards">
+            {[...Array(8)].map((_, ind) => {
+              return <ProductCardSkeleton key={uuidv4()} />;
+            })}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
