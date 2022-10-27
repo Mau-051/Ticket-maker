@@ -12,4 +12,4 @@ it's a point of sale type app made with react
 
 [sass](https://sass-lang.com/).
 
-[font-awesome](https://fontawesome.com/).
+[react-icons](https://react-icons.github.io/react-icons/).

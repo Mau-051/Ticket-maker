@@ -11,8 +11,8 @@
 }
 
 .show-saved-btn {
-  background-color: hsl(216.34deg, 70.58%, 36.67%);
-  color: rgb(226, 226, 226);
+  background-color: rgb(226, 226, 226);
+  color: hsl(216.34deg, 70.58%, 36.67%);
   font-size: max(1.8vw, 2vh);
   border-radius: 0.3em;
   margin: 1vw;
@@ -53,6 +53,7 @@
   }
   .show-saved-btn {
     margin: 2vw 1.5vw 3vw;
+    padding: 1vw 2vw;
     font-size: 7vw;
   }
 }/*# sourceMappingURL=showTicket.css.map */

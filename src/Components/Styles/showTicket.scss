@@ -9,8 +9,8 @@
 }
 
 .show-saved-btn {
-  background-color: $primary-color;
-  color: $thirdary-color;
+  background-color: $thirdary-color;
+  color: $primary-color;
   @include show-btn;
   padding: 0.7vw;
 }
@@ -41,6 +41,7 @@
 
   .show-saved-btn {
     margin: 2vw 1.5vw 3vw;
+    padding: 1vw 2vw;
     font-size: 7vw;
   }
 }

@@ -13,10 +13,7 @@ body {
 ::-webkit-scrollbar {
   width: 1vw;
   height: 0.7vw;
-  &-track {
-    box-shadow: inset 0 0 0.2vw $thirdary-color;
-    border-radius: 0.4vw;
-  }
+
   &-thumb {
     background: $secondary-color;
     border-radius: 0.4vw;
