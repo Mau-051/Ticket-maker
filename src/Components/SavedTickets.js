@@ -1,39 +1,42 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-import "./Styles/SavedTickets.css";
+import { Link } from "react-router-dom";
 import { FaTrash, FaHome } from "react-icons/fa";
+import "./Styles/SavedTickets.css";
 import useStore from "../store.js";
 
-export function SavedTickets() {
-  let navigate = useNavigate();
+function selectSavedTickets(state) {
+  return state.savedTickets;
+}
 
-  const savedTickets = useStore((state) => state.savedTickets);
+export function SavedTickets() {
+  const savedTickets = useStore(selectSavedTickets);
   const removeSavedTicket = useStore((state) => state.removeSavedTicket);
-  function removeSavedTicketkk(i) {
-    removeSavedTicket(i);
-  }
 
   return (
     <>
-      <button className="saved-home-btn" onClick={() => navigate("/")}>
+      <Link className="saved-home-btn" to="/">
         <FaHome />
-      </button>
+      </Link>
       <h1>SAVED TICKETS</h1>
       <div className="saved-container">
+        {savedTickets.length ? (
+          ""
+        ) : (
+          <p className="no-tickets">No saved tickets</p>
+        )}
         {savedTickets.map((ticket, ticketInd) => {
           return (
-            <div key={uuidv4()} className="saved-ticket">
+            <div key={ticket.id} className="saved-ticket">
               <button
                 className="delete-saved-ticket-btn"
-                onClick={() => removeSavedTicketkk(ticketInd)}
+                onClick={() => removeSavedTicket(ticketInd)}
               >
                 <FaTrash />
               </button>
               <p className="products">Products</p>
               <p>-----------------------</p>
 
-              {ticket[0].map((products) => {
+              {ticket.ticketsArr.map((products) => {
                 let numOfSpace =
                   18 -
                   products[1].productName.length -
@@ -45,7 +48,7 @@ export function SavedTickets() {
                 spaceStr = spaceStr + "$";
 
                 return (
-                  <p key={uuidv4()}>
+                  <p key={products[1].id}>
                     {products[1].productNum
                       ? `X${products[1].productNum} `
                       : ""}
@@ -59,7 +62,7 @@ export function SavedTickets() {
               })}
 
               <p>-----------------------</p>
-              <p className="total">Total--------------${ticket[1]}</p>
+              <p className="total">Total--------------${ticket.total}</p>
             </div>
           );
         })}

@@ -45,12 +45,12 @@ const useStore = create((set) => ({
       };
     });
   },
-  currentProduct: "",
-  setCurrentProduct: (newCurrent) => {
+  currentProductType: "",
+  setcurrentProductType: (newCurrent) => {
     set((state) => {
-      state.currentProduct = newCurrent;
+      state.currentProductType = newCurrent;
       return {
-        currentProduct: state.currentProduct,
+        currentProductType: state.currentProductType,
       };
     });
   },

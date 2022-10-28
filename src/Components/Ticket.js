@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { FaTrash, FaSave } from "react-icons/fa";
 import useStore from "../store.js";
 
 export function Ticket({ ticketsArr, total }) {
-  let navigate = useNavigate();
-
   const savedTickets = useStore((state) => state.savedTickets);
   const addSavedTicket = useStore((state) => state.addSavedTicket);
   const clearGlobalTicket = useStore((state) => state.clearGlobalTicket);
@@ -14,13 +12,6 @@ export function Ticket({ ticketsArr, total }) {
   let boolsavedTickets = false;
   if (savedTickets.length) {
     boolsavedTickets = true;
-  }
-
-  async function handleSubmit(path) {
-    navigate(path);
-    if (path === "ticket") {
-      addSavedTicket([ticketsArr, total, uuidv4()]);
-    }
   }
 
   return (
@@ -41,7 +32,7 @@ export function Ticket({ ticketsArr, total }) {
           spaceStr = spaceStr + "$";
 
           return (
-            <p key={uuidv4()}>
+            <p key={ticket[1].id}>
               {ticket[1].productNum ? `X${ticket[1].productNum} ` : ""}
               {[
                 ticket[0].slice(0, ticket[1].productName.length),
@@ -75,7 +66,13 @@ export function Ticket({ ticketsArr, total }) {
         {ticketsArr.length ? (
           <Link
             to="ticket"
-            onClick={() => addSavedTicket([ticketsArr, total, uuidv4()])}
+            onClick={() =>
+              addSavedTicket({
+                ticketsArr: ticketsArr,
+                total: total,
+                id: uuidv4(),
+              })
+            }
             className={
               boolsavedTickets
                 ? "ticket-button save-ticket"

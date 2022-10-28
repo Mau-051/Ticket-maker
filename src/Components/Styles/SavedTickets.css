@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
 body {
-  background-color: hsl(216.34deg, 70.58%, 36.67%);
   text-align: center;
 }
 
@@ -13,6 +12,7 @@ body {
   padding: 0.5vw 1vw;
   font-size: 2vw;
   position: absolute;
+  color: hsl(216.34deg, 70.58%, 36.67%);
   left: 1vw;
   top: 0.7vw;
   background-color: hsl(50deg, 100%, 59%);
@@ -22,6 +22,12 @@ h1 {
   color: hsl(50deg, 100%, 59%);
   font-size: 3vw;
   margin-top: 1.5vw;
+}
+
+.no-tickets {
+  margin-top: 10vw;
+  font-size: 2.5vw;
+  color: rgb(226, 226, 226);
 }
 
 .saved-container {
@@ -71,6 +77,9 @@ h1 {
   }
   h1 {
     font-size: 7vw;
+  }
+  .no-tickets {
+    font-size: 4vw;
   }
   .saved-container {
     margin-top: 4vw;

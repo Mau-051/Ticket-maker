@@ -3,11 +3,13 @@ import { v4 as uuidv4 } from "uuid";
 import useStore from "../store.js";
 
 export function MainNavbar({ productsKeysArr }) {
-  const setCurrentProduct = useStore((state) => state.setCurrentProduct);
-  const currentProduct = useStore((state) => state.currentProduct);
+  const setcurrentProductType = useStore(
+    (state) => state.setcurrentProductType
+  );
+  const currentProductType = useStore((state) => state.currentProductType);
 
   useEffect(() => {
-    setCurrentProduct(productsKeysArr[0]);
+    setcurrentProductType(productsKeysArr[0]);
   }, []);
 
   return (
@@ -17,8 +19,8 @@ export function MainNavbar({ productsKeysArr }) {
           return (
             <li key={uuidv4()}>
               <button
-                className={currentProduct === productKey ? "active" : ""}
-                onClick={() => setCurrentProduct(productKey)}
+                className={currentProductType === productKey ? "active" : ""}
+                onClick={() => setcurrentProductType(productKey)}
               >
                 {productKey.toUpperCase()}
               </button>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { ProductCard } from "./ProductCard";
 import { getProducts } from "../Service-code/productData";
 import { MainNavbar } from "./MainNavbar";
 import { Ticket } from "./Ticket";
 import { MainSkeleton } from "./SkeletonComps/MainSkeleton";
+import { v4 as uuidv4 } from "uuid";
 import useStore from "../store.js";
 import "./Styles/Main.css";
 
@@ -31,7 +31,7 @@ export function Main({ globalTicket, globalTicketsTotal }) {
   const setGlobalTicketsTotal = useStore(
     (state) => state.setGlobalTicketsTotal
   );
-  const currentProduct = useStore((state) => state.currentProduct);
+  const currentProductType = useStore((state) => state.currentProductType);
 
   function passProduct(productName, productPrice) {
     let productNum = 1;
@@ -47,6 +47,7 @@ export function Main({ globalTicket, globalTicketsTotal }) {
       productTotal: productNum * productPrice,
       productName,
       productPrice,
+      id: uuidv4(),
     });
   }
 
@@ -69,7 +70,7 @@ export function Main({ globalTicket, globalTicketsTotal }) {
         <div className="product-zone">
           <div className="product-cards">
             {products[
-              currentProduct ? currentProduct : Object.keys(products)[0]
+              currentProductType ? currentProductType : Object.keys(products)[0]
             ].map((product) => {
               return (
                 <ProductCard
@@ -77,7 +78,7 @@ export function Main({ globalTicket, globalTicketsTotal }) {
                   imageURL={product.imageURL}
                   price={product.price}
                   passProduct={passProduct}
-                  key={uuidv4()}
+                  key={`${product.name}${product.price}`}
                 />
               );
             })}
