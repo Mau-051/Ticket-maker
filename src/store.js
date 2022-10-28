@@ -38,9 +38,10 @@ const useStore = create((set) => ({
   },
   removeSavedTicket: (ticketInd) => {
     set((state) => {
-      state.savedTickets.splice(ticketInd, 1);
       return {
-        savedTickets: state.savedTickets,
+        savedTickets: state.savedTickets.filter((_, ind) => {
+          return ind !== ticketInd;
+        }),
       };
     });
   },

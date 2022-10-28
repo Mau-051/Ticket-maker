@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { FaTrash, FaSave } from "react-icons/fa";
 import useStore from "../store.js";
@@ -19,7 +19,7 @@ export function Ticket({ ticketsArr, total }) {
   async function handleSubmit(path) {
     navigate(path);
     if (path === "ticket") {
-      addSavedTicket([ticketsArr, total]);
+      addSavedTicket([ticketsArr, total, uuidv4()]);
     }
   }
 
@@ -57,30 +57,33 @@ export function Ticket({ ticketsArr, total }) {
       </div>
       <div className="ticket-btn-container">
         {boolsavedTickets ? (
-          <button
-            onClick={() => handleSubmit("saved-tickets")}
+          <Link
+            to="saved-tickets"
             className={
               ticketsArr.length
-                ? "saved-tickets"
-                : "saved-tickets big-ticket-btn"
+                ? "ticket-button saved-tickets"
+                : "ticket-button saved-tickets big-ticket-btn"
             }
           >
             Saved {ticketsArr.length ? <br></br> : ""}
             tickets
-          </button>
+          </Link>
         ) : (
           ""
         )}
 
         {ticketsArr.length ? (
-          <button
-            onClick={() => handleSubmit("ticket")}
+          <Link
+            to="ticket"
+            onClick={() => addSavedTicket([ticketsArr, total, uuidv4()])}
             className={
-              boolsavedTickets ? "save-ticket" : "save-ticket big-ticket-btn"
+              boolsavedTickets
+                ? "ticket-button save-ticket"
+                : "ticket-button save-ticket big-ticket-btn"
             }
           >
             <FaSave />
-          </button>
+          </Link>
         ) : (
           ""
         )}

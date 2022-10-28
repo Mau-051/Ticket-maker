@@ -38,6 +38,7 @@ body {
   padding: 1vw 0.5vw 0;
   margin: 0 0.5vw;
   border: none;
+  border-radius: 0.7vw;
   background-color: rgba(0, 0, 0, 0);
 }
 .main-navbar li button:hover {
@@ -75,7 +76,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.ticket-zone .ticket-btn-container button {
+.ticket-zone .ticket-btn-container .ticket-button {
   background-color: hsl(216.34deg, 70.58%, 36.67%);
   color: rgb(226, 226, 226);
   border-radius: 1.5vw;
@@ -83,6 +84,7 @@ body {
   padding: 1vw 1vw;
   font-size: 1vw;
   border: none;
+  text-decoration: none;
 }
 .ticket-zone .ticket-btn-container .save-ticket {
   font-size: 2vw;

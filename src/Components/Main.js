@@ -50,7 +50,9 @@ export function Main({ globalTicket, globalTicketsTotal }) {
     });
   }
 
-  setGlobalTicketsTotal(calculateTotal(Array.from(globalTicket)));
+  useEffect(() => {
+    setGlobalTicketsTotal(calculateTotal(Array.from(globalTicket)));
+  }, [globalTicket]);
 
   if (status === "loading") {
     return <MainSkeleton />;

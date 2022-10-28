@@ -1,6 +1,6 @@
 # Ticket maker
 
-it's a point of sale type app made with react
+it's a point of sale type app made with react.
 
 ## Dependencies/Libraries used
 

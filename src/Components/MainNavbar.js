@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import useStore from "../store.js";
 
@@ -6,9 +6,9 @@ export function MainNavbar({ productsKeysArr }) {
   const setCurrentProduct = useStore((state) => state.setCurrentProduct);
   const currentProduct = useStore((state) => state.currentProduct);
 
-  if (!currentProduct) {
+  useEffect(() => {
     setCurrentProduct(productsKeysArr[0]);
-  }
+  }, []);
 
   return (
     <div>
