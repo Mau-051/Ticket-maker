@@ -97,7 +97,7 @@ body {
     }
   }
   .delete-ticket-btn {
-    background-color: rgb(255, 124, 100);
+    background-color: $red;
     border-radius: 1.5vw;
     margin-bottom: 1.2vw;
     cursor: pointer;
@@ -180,6 +180,18 @@ body {
   filter: grayscale(100%);
 }
 
+.not-found {
+  margin: 14vw;
+  h1 {
+    color: $red;
+    font-size: 5vw;
+  }
+  p {
+    font-size: 2.5vw;
+    color: $secondary-color;
+  }
+}
+
 .skeleton {
   animation: skeleton-loading 0.7s linear infinite alternate;
 }
@@ -236,6 +248,15 @@ body {
       .saved-tickets {
         font-size: 1.8vw;
       }
+    }
+  }
+  .not-found {
+    margin: 14vw;
+    h1 {
+      font-size: 8vw;
+    }
+    p {
+      font-size: 5vw;
     }
   }
 }

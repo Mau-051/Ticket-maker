@@ -40,7 +40,7 @@ h1 {
     padding: 0;
     .delete-saved-ticket-btn {
       float: right;
-      background-color: rgb(255, 124, 100);
+      background-color: $red;
       border: 0;
       cursor: pointer;
       border-radius: 1vw 2vw 1vw 1vw;

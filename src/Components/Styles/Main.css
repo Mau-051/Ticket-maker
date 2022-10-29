@@ -181,6 +181,18 @@ body {
   filter: grayscale(100%);
 }
 
+.not-found {
+  margin: 14vw;
+}
+.not-found h1 {
+  color: rgb(255, 124, 100);
+  font-size: 5vw;
+}
+.not-found p {
+  font-size: 2.5vw;
+  color: hsl(50deg, 100%, 59%);
+}
+
 .skeleton {
   -webkit-animation: skeleton-loading 0.7s linear infinite alternate;
           animation: skeleton-loading 0.7s linear infinite alternate;
@@ -239,6 +251,15 @@ body {
   }
   .ticket-zone .ticket-btn-container .saved-tickets {
     font-size: 1.8vw;
+  }
+  .not-found {
+    margin: 14vw;
+  }
+  .not-found h1 {
+    font-size: 8vw;
+  }
+  .not-found p {
+    font-size: 5vw;
   }
 }
 @-webkit-keyframes skeleton-loading {

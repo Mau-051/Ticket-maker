@@ -22,7 +22,7 @@ export function SavedTickets() {
         {savedTickets.length ? (
           ""
         ) : (
-          <p className="no-tickets">No saved tickets</p>
+          <p className="no-tickets">No saved tickets.</p>
         )}
         {savedTickets.map((ticket, ticketInd) => {
           return (

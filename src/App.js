@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Main } from "./Components/Main";
 import { ShowTicket } from "./Components/ShowTicket";
 import { SavedTickets } from "./Components/SavedTickets";
+import { NotFound } from "./Components/NotFound";
 import useStore from "./store.js";
 
 export function App() {
@@ -29,6 +30,7 @@ export function App() {
         }
       />
       <Route path="/saved-tickets" element={<SavedTickets />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
