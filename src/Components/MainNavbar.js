@@ -10,7 +10,7 @@ export function MainNavbar({ productsKeysArr }) {
 
   useEffect(() => {
     setcurrentProductType(productsKeysArr[0]);
-  }, []);
+  });
 
   return (
     <div>

@@ -43,6 +43,7 @@ body {
 }
 .main-navbar li button:hover {
   background-color: rgba(0, 0, 0, 0.089);
+  transform: scale(1.05);
 }
 .main-navbar li button.active {
   color: hsl(50deg, 100%, 59%);

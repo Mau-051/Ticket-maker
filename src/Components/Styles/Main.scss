@@ -45,6 +45,7 @@ body {
       background-color: rgba(0, 0, 0, 0);
       &:hover {
         background-color: rgba(0, 0, 0, 0.089);
+        transform: scale(1.05);
       }
       &.active {
         color: $secondary-color;
